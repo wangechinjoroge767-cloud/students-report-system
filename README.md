@@ -1,73 +1,104 @@
-# students-report-system
-python 
-The program allows you to:
+# Student Results Management System Using Python
 
-Add Student Data: Input student names and their marks for specific subjects.
-View All Students: Display a basic list of all entered students.
-Generate Reports: Print a detailed report for all students, including individual subject grades, average marks, overall grades, and identify the top-performing student.
-Key Global Variable
-subject = ["Maths", "English", "Science"]: This list defines the subjects for which student marks are recorded. It's accessible throughout the program.
-Core Functions
-get_valid_marks(subject_name):
+## Project Overview
 
-Prompts the user to enter marks for a given subject_name.
-Includes input validation to ensure that the entered mark is a valid number (float). It keeps asking until a valid number is provided.
-get_students_input():
+The Student Results Management System is a simple, menu-driven Python application developed to manage student academic results. It allows users to enter student names and marks, calculate grades and average scores, generate performance reports, and identify the top-performing student.
 
-Collects data for multiple students until the user types 'done' for the student name.
-For each student, it prompts for their name.
-Then, it iterates through the subject list to get marks for each subject using get_valid_marks().
-Stores each student's data as a dictionary { 'name': '...', 'marks': { 'Subject1': mark1, ... } } and adds it to a list of students.
-get_grade(mark):
+This project demonstrates the practical application of Python programming concepts in managing and processing student academic data.
 
-Takes a numerical mark as input.
-Returns a letter grade ('A', 'B', 'C', 'D', 'F') based on predefined ranges (e.g., 80+ is 'A', 65+ is 'B').
-calculate_average(student):
+## Project Objectives
 
-Takes a student dictionary (which includes their marks) as input.
-Calculates the average mark across all subjects defined in the global subject list.
-Ensures marks are treated as floats during calculation and rounds the average to two decimal places.
-get_student_report(student):
+- Record student names and academic marks.
+- Validate user input to ensure marks are within the permitted range.
+- Calculate grades for individual subjects and overall performance.
+- Calculate and display each student's average marks.
+- Generate a report showing student performance.
+- Identify the student with the highest average score.
 
-Generates a comprehensive report dictionary for a single student.
-It includes the student's name, a detailed breakdown of marks and grades for each subject, their overall average mark, and an overall letter grade based on that average.
-get_all_results(students):
+## Key Features
 
-Takes a list of students and returns a list of individual student reports by calling get_student_report() for each student.
-get_top_student(students):
+### 1. Add Student Data
+Users can enter student names and marks for Maths, English, and Science. Multiple students can be added during a session.
 
-Identifies the student with the highest average mark from the list of students.
-Uses calculate_average as the key for comparison.
-Returns the full student dictionary of the top student or None if no students are present.
-view_all_students(students):
+### 2. Input Validation
+The application checks that marks are numerical values between 0 and 100. It also prevents empty student names and invalid menu selections.
 
-Prints the name and raw marks for each student in a simple list format.
-print_report(students):
+### 3. Grade Calculation
+The system automatically assigns letter grades according to the following grading scale:
 
-Formats and prints the detailed results report to the console.
-It includes a header, a table showing each student's name, marks and grades per subject, average, and overall grade.
-It also highlights the top student and provides a grade scale legend.
-show_menu():
+| Marks | Grade |
+|---|---|
+| 80–100 | A |
+| 65–79.99 | B |
+| 50–64.99 | C |
+| 40–49.99 | D |
+| Below 40 | F |
 
-Displays the main menu options to the user (Add Student, View All Students, Print Report, Exit).
-get_menu_choice():
+### 4. Student Records
+Users can view the names of all students entered and their recorded subject marks.
 
-Prompts the user to enter their choice from the menu.
-Validates the input to ensure it's a number between 1 and 4.
-main():
+### 5. Performance Reports
+The system generates a formatted report displaying each student's subject marks, individual subject grades, average score, and overall grade.
 
-This is the main function that orchestrates the entire program.
-It initializes an empty list students.
-It enters a continuous loop, displaying the menu, getting the user's choice, and then calling the appropriate function based on that choice (add students, view students, print report, or exit).
-Program Execution (if __name__ == "__main__":)
-This standard Python construct ensures that the main() function is called only when the script is executed directly (not when imported as a module).
-What's Happening in Your Output
-Your output perfectly demonstrates the flow:
+### 6. Top Student Identification
+The application calculates student averages and identifies the student with the highest average mark.
 
-Welcome Message & Menu: The main() function starts, prints the welcome message, and displays the menu.
-Invalid Choice: You entered '5', and the system correctly responded with "Invalid choice."
-Adding Students: You then chose '1' (Add Student) and provided data for six students (wangechi, John, Amina, Angel, John, Ben), then typed 'done' to finish adding.
-View All Students: You chose '2' (View All Students), and the program listed the names and raw marks for all the students you just entered.
-Print Report: You chose '3' (Print Report), and the system generated the well-formatted table, calculated averages and grades, and correctly identified 'wangechi' as the top student.
-Exiting: Finally, you chose '4' (Exit), and the program printed "Exiting the system. Goodbye!" and terminated.
-This code provides a complete, interactive system for managing student results from data entry to detailed reporting.
+### 7. Interactive Menu
+Users can choose between adding students, viewing student records, generating reports, and exiting the application.
+
+## Technologies Used
+
+- **Programming Language:** Python
+- **Data Structures:** Lists and dictionaries
+- **Core Concepts:** Functions, loops, conditional statements, input validation, iteration, and calculations
+
+## How to Run the Project
+
+### Prerequisites
+Install Python 3 on your computer.
+
+### Instructions
+
+1. Clone or download this repository.
+2. Open the project folder in your terminal or code editor.
+3. Run the following command:
+
+```bash
+python student_results_system.py
+```
+
+4. Follow the on-screen menu instructions to use the application.
+
+On some systems, you may need to use `python3` instead of `python`.
+
+## Example Usage
+
+The application displays a menu with four options:
+
+1. Add Student
+2. View All Students
+3. Print Report
+4. Exit
+
+After adding student records, users can view the entered data or generate a report containing grades, average scores, and the top-performing student.
+
+## Learning Outcomes
+
+Through this project, I applied Python programming concepts to a practical data management scenario. The project strengthened my understanding of:
+
+- Organizing information using lists and dictionaries.
+- Writing reusable functions.
+- Validating user input.
+- Performing calculations and applying conditional logic.
+- Processing multiple records.
+- Presenting results in a structured report.
+
+## Limitations
+
+The current application stores student records in memory while it is running. Records are not automatically saved to a permanent file or database, so they are lost when the program terminates.
+
+The application is designed as a command-line program and does not currently include a graphical user interface or database integration.
+
+## Conclusion
+
+The Student Results Management System demonstrates how Python can be used to automate basic academic record management, calculate student performance, and generate structured reports. It serves as a practical foundation for developing more advanced data management applications.
